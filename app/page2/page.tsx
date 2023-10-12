@@ -1,10 +1,8 @@
-//dynamic page
 
-// cache: 'force-cache also denotes statically rendered page
+// static page
+
 const getQuote = async () => {
-  const res = await fetch("https://api.quotable.io/random?tags=technology", {
-    cache: "no-cache",
-  });
+  const res = await fetch("https://api.quotable.io/random?tags=technology");
 
   const data = await res.json();
   return data;
