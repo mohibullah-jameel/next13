@@ -7,20 +7,21 @@ export async function generateStaticParams() {
   const posts = await res.json();
 
   //   if you want to build only certain pages of the routes then return an array with them e.g
-  // return [
-  //   { post: "1" },
-  //   { post: "2" },
-  //   { post: "3" },
-  //   { post: "4" },
-  //   { post: "5" },
-  //   { post: "6" },
-  // ]; //it will generate only 4 pages.
+  return [
+    { post: "1" },
+    { post: "2" },
+    { post: "3" },
+    { post: "4" },
+    { post: "5" },
+    { post: "6" },
+  ]; //it will generate only 4 pages.
 
   // name should be same as slug
 
-  return posts.map((post: any) => ({
-    post: post.id.toString(),
-  }));
+  //build all routes
+  // return posts.map((post: any) => ({
+  //   post: post.id.toString(),
+  // }));
 }
 
 const getPost = async (id: string) => {
